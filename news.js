@@ -61,12 +61,12 @@ var data = [
     }
 
 ];
+var fulldata = "<div class='content' id='content'>";
 function myFunction() {
     var x = document.getElementById("sel-category").value;
     for (let i = 0; i < data.length; i++) {
         if (x === data[i].heading) {
-            document.getElementById("displaynews").innerHTML =
-                "<div class='content' id='content'>" +
+            let display = "<div class='content' id='content'>" +
                 "<div class='content__sub' id='content__display'>" +
                 data[i].image +
                 "<h3 class='content__modifier content__head'>" + data[i].heading + "</h3>" +
@@ -75,6 +75,10 @@ function myFunction() {
                 "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
                 "</div>" +
                 "</div>";
+            document.getElementById("displaynews").innerHTML = display;
+        }
+        else if (x === "All") {
+            document.getElementById("displaynews").innerHTML = fulldata;
         }
     }
 }
@@ -120,87 +124,17 @@ function myForm() {
         "<button class='form__subscribe-button'>Subscribe</button>" +
         "</div>";
 
-    let data = "<div class='content' id='content'>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>BBC</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>Aaj Tak</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>NDTV</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>Republic</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>NBC</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>TV9</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>India Today</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>Times Now</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>Fox News</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>" +
-        "<hr>" +
-        "<div class='content__sub' id='content__display'>" +
-        "<div class='content__img'></div>" +
-        "<h3 class='content__modifier content__head'>NDTV</h3>" +
-        "<p class='content__modifier content__date'>Posted on <b>29 June, 2019</b> // Category: Category One</p>" +
-        "<p class='content__modifier content__matter'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.</p> " +
-        "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
-        "</div>"
-    "</div>";
-
-    document.getElementById("displaynews").innerHTML = data;
+    for (let i = 0; i < data.length; i++) {
+        fulldata +=
+            "<div class='content__sub' id='content__display'>" +
+            data[i].image +
+            "<h3 class='content__modifier content__head'>" + data[i].heading + "</h3>" +
+            "<p class='content__modifier content__date'>" + data[i].date + "</p>" +
+            "<p class='content__modifier content__matter'>" + data[i].content + "</p> " +
+            "<a href='#' class='content__modifier btn btn--pink'>Continue Reading</a>" +
+            "</div>" +
+            "<hr>";
+    }
+    fulldata += "</div>";
+    document.getElementById("displaynews").innerHTML = fulldata;
 }
