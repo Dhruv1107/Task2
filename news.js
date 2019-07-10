@@ -121,7 +121,7 @@ function myForm() {
         "</select>" +
         "<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>" +
         "<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>" +
-        "<button class='form__subscribe-button'>Subscribe</button>" +
+        "<button class='form__subscribe-button' onclick='validate()'>Subscribe</button>" +
         "</div>";
 
     for (let i = 0; i < data.length; i++) {
@@ -137,4 +137,11 @@ function myForm() {
     }
     fulldata += "</div>";
     document.getElementById("displaynews").innerHTML = fulldata;
+}
+function validate() {
+    if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
+        return true;
+    }
+    alert("You have entered an invalid email address!");
+    return (false);
 }
