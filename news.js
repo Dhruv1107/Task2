@@ -139,7 +139,11 @@ function myForm() {
     document.getElementById("displaynews").innerHTML = fulldata;
 }
 function validate() {
+    let email = document.getElementById("subscribe").value;
     if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
+        localStorage.setItem("iamkey", email);
+        console.log(localStorage.getItem("iamkey"));
+        alert("You have entered a valid email address!");
         return true;
     }
     alert("You have entered an invalid email address!");
