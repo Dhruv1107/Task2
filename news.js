@@ -129,17 +129,17 @@ function myForm() {
     main.appendChild(div1);
     main.appendChild(div2);
 
-    var allChannels='';
-    for(let i=0;i<channels.length;i++){
-        allChannels+=`<option value='`+channels[i]+`'>`+channels[i]+`</option>`;
+    var allChannels = '';
+    for (let i = 0; i < channels.length; i++) {
+        allChannels += `<option value='` + channels[i] + `'>` + channels[i] + `</option>`;
     }
-    
+
     document.getElementById("iamform").innerHTML =
         "<div class='form'>" +
         "<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>" +
         "<select id='sel-category' class='form__select-box' onchange='myFunction()'>" +
         "<option value='All' selected>All</option>" +
-        allChannels+
+        allChannels +
         "</select>" +
         "<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>" +
         "<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>" +
@@ -177,9 +177,13 @@ function myForm() {
 
 var email = [];
 function validate() {
-    email.push(document.getElementById("subscribe").value);
     if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
-        localStorage.setItem("iamkey", email);
+        let loc = localStorage.getItem("iamkey");
+        if (loc) {
+            email = loc.split(",");
+        }
+        email.push(document.getElementById("subscribe").value);
+        localStorage.setItem("iamkey", JSON.stringify(email));
         console.log(localStorage.getItem("iamkey"));
         alert("You have entered a valid email address!");
         return true;
