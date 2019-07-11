@@ -118,6 +118,8 @@ function myFunction() {
 function myForm() {
     header();
     footer();
+    displayform();
+    displaynews();
     function header() {
         let html = '<h1 class="header__heading">NEWSFEED</h1><p class="header__caption">Yet another newsfeed</p>';
         document.getElementById("header").innerHTML = html;
@@ -126,60 +128,65 @@ function myForm() {
         let html = ' <p class="footer__copyright">&copy; NewsFeed 2019</p>';
         document.getElementById("footer").innerHTML = html;
     }
+    function displayform() {
+        var form = document.createElement("div");
+        form.setAttribute("id", "iamform");
+        let main = document.getElementById("main");
+        main.appendChild(form);
 
-    var div1 = document.createElement("div");
-    div1.setAttribute("id", "displaynews");
-    var div2 = document.createElement("div");
-    div2.setAttribute("id", "iamform");
-    let main = document.getElementById("main");
-    main.appendChild(div1);
-    main.appendChild(div2);
+        var allChannels = '';
+        for (let i = 0; i < channels.length; i++) {
+            allChannels += `<option value='` + channels[i] + `'>` + channels[i] + `</option>`;
+        }
 
-    var allChannels = '';
-    for (let i = 0; i < channels.length; i++) {
-        allChannels += `<option value='` + channels[i] + `'>` + channels[i] + `</option>`;
+        document.getElementById("iamform").innerHTML =
+            "<div class='form'>" +
+            "<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>" +
+            "<select id='sel-category' class='form__select-box' onchange='myFunction()'>" +
+            // If the select is changed myFunction() is called
+            "<option value='All' selected>All</option>" +
+            allChannels +
+            "</select>" +
+            "<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>" +
+            "<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>" +
+            "<button class='form__subscribe-button' onclick='validate()'>Subscribe</button>" +
+            "</div>";
+
     }
+    function displaynews() {
+        var disp_news = document.createElement("div");
+        disp_news.setAttribute("id", "displaynews");
+        let main = document.getElementById("main");
+        main.appendChild(disp_news);
+        for (let i = 0; i < data.length; i++) {
+            fulldata += "<div class='content' id='content'>" +
+                "<div class='content__sub' id='content__display'>" +
+                data[i].image +
+                "<h3 class='content__modifier content__head' id='myBtn'>" + data[i].heading + "</h3>" +
+                "<p class='content__modifier content__date'>" + data[i].date + "</p>" +
+                "<p class='content__modifier content__matter'>" + data[i].content + "</p> " +
+                `<div id="myModal" class="modal">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closepopup()">&times;</span>
+                    <h2 id="popup_head"></h2>
+                </div>
+                <div class="modal-body">
+                    <p id="popup_content"></p>
+                </div>
+                <div class="modal-footer">
+                    <h3 id="popup_foot">&copy; NewsFeed 2019</h3>
+                </div>
+                </div>
+                </div>`+
+                "<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopupall(data[" + i + "])'>Continue Reading</a>" +
+                "</div>" +
+                "<hr>";
+        }
 
-    document.getElementById("iamform").innerHTML =
-        "<div class='form'>" +
-        "<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>" +
-        "<select id='sel-category' class='form__select-box' onchange='myFunction()'>" +
-        // If the select is changed myFunction() is called
-        "<option value='All' selected>All</option>" +
-        allChannels +
-        "</select>" +
-        "<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>" +
-        "<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>" +
-        "<button class='form__subscribe-button' onclick='validate()'>Subscribe</button>" +
-        "</div>";
-
-    for (let i = 0; i < data.length; i++) {
-        fulldata += "<div class='content' id='content'>"+
-            "<div class='content__sub' id='content__display'>" +
-            data[i].image +
-            "<h3 class='content__modifier content__head' id='myBtn'>" + data[i].heading + "</h3>" +
-            "<p class='content__modifier content__date'>" + data[i].date + "</p>" +
-            "<p class='content__modifier content__matter'>" + data[i].content + "</p> " +
-            `<div id="myModal" class="modal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span class="close" onclick="closepopup()">&times;</span>
-                <h2 id="popup_head"></h2>
-              </div>
-              <div class="modal-body">
-                <p id="popup_content"></p>
-              </div>
-              <div class="modal-footer">
-                <h3 id="popup_foot">&copy; NewsFeed 2019</h3>
-              </div>
-            </div>
-            </div>`+
-            "<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopupall(data[" + i + "])'>Continue Reading</a>" +
-            "</div>" +
-            "<hr>";
+        fulldata += "</div>";
+        document.getElementById("displaynews").innerHTML = fulldata;
     }
-    fulldata += "</div>";
-    document.getElementById("displaynews").innerHTML = fulldata;
 }
 
 //For Validation of Email Address
@@ -188,7 +195,7 @@ function validate() {
     if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
         let loc = localStorage.getItem("iamkey");
         if (loc) {
-            email = loc.split(",");
+            email = JSON.parse(loc);
         }
         email.push(document.getElementById("subscribe").value);
         localStorage.setItem("iamkey", JSON.stringify(email));
