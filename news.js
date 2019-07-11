@@ -1,4 +1,5 @@
 var data = [
+
     {
         image: "<div class='content__img'></div>",
         heading: "BBC",
@@ -71,6 +72,7 @@ var data = [
     }
 
 ];
+var channels = ["BBC", "Aaj Tak", "NBC", "NDTV", "Republic", "TV9", "India Today", "Times Now", "Fox News", "CNN"];
 var fulldata = "<div class='content' id='content'>";
 function myFunction() {
     var x = document.getElementById("sel-category").value;
@@ -127,21 +129,17 @@ function myForm() {
     main.appendChild(div1);
     main.appendChild(div2);
 
+    var allChannels='';
+    for(let i=0;i<channels.length;i++){
+        allChannels+=`<option value='`+channels[i]+`'>`+channels[i]+`</option>`;
+    }
+    
     document.getElementById("iamform").innerHTML =
         "<div class='form'>" +
         "<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>" +
         "<select id='sel-category' class='form__select-box' onchange='myFunction()'>" +
         "<option value='All' selected>All</option>" +
-        "<option value='BBC'>BBC</option>" +
-        "<option value='Aaj Tak'>Aaj Tak</option>" +
-        "<option value='NBC'>NBC</option>" +
-        "<option value='NDTV'>NDTV</option>" +
-        "<option value='Republic'>Republic</option>" +
-        "<option value='TV9'>TV9</option>" +
-        "<option value='India Today'>India Today</option>" +
-        "<option value='Times Now'>Times Now</option>" +
-        "<option value='Fox News'>Fox News</option>" +
-        "<option value='CNN'>CNN</option>" +
+        allChannels+
         "</select>" +
         "<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>" +
         "<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>" +
@@ -149,7 +147,6 @@ function myForm() {
         "</div>";
 
     for (let i = 0; i < data.length; i++) {
-        // console.log(data[i].heading);
         fulldata +=
             "<div class='content__sub' id='content__display'>" +
             data[i].image +
@@ -178,7 +175,7 @@ function myForm() {
     document.getElementById("displaynews").innerHTML = fulldata;
 }
 
-var email=[];
+var email = [];
 function validate() {
     email.push(document.getElementById("subscribe").value);
     if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
