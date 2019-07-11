@@ -1,3 +1,4 @@
+//data in JSON Format
 var data = [
 
     {
@@ -72,8 +73,12 @@ var data = [
     }
 
 ];
+//Channels present in the dropdown list
 var channels = ["BBC", "Aaj Tak", "NBC", "NDTV", "Republic", "TV9", "India Today", "Times Now", "Fox News", "CNN"];
-var fulldata = "<div class='content' id='content'>";
+//variable used to store the complete data of all news channels
+var fulldata = " ";
+
+//Function to display the selected news category
 function myFunction() {
     var x = document.getElementById("sel-category").value;
     for (let i = 0; i < data.length; i++) {
@@ -109,6 +114,7 @@ function myFunction() {
     }
 }
 
+//On Load Function Call
 function myForm() {
     header();
     footer();
@@ -138,6 +144,7 @@ function myForm() {
         "<div class='form'>" +
         "<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>" +
         "<select id='sel-category' class='form__select-box' onchange='myFunction()'>" +
+        // If the select is changed myFunction() is called
         "<option value='All' selected>All</option>" +
         allChannels +
         "</select>" +
@@ -147,7 +154,7 @@ function myForm() {
         "</div>";
 
     for (let i = 0; i < data.length; i++) {
-        fulldata +=
+        fulldata += "<div class='content' id='content'>"+
             "<div class='content__sub' id='content__display'>" +
             data[i].image +
             "<h3 class='content__modifier content__head' id='myBtn'>" + data[i].heading + "</h3>" +
@@ -175,6 +182,7 @@ function myForm() {
     document.getElementById("displaynews").innerHTML = fulldata;
 }
 
+//For Validation of Email Address
 var email = [];
 function validate() {
     if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById("subscribe").value)) {
@@ -192,11 +200,13 @@ function validate() {
     return (false);
 }
 
+//When the user clicks the button, open the modal (for one news channel)
 function showpopup() {
     let modal = document.getElementById("myModal");
     modal.style.display = "block";
 }
 
+//When the user clicks the button, open the modal (for all news channel)
 function showpopupall(i) {
     document.getElementById("popup_head").innerHTML = i.heading;
     document.getElementById("popup_content").innerHTML = i.popup;
@@ -204,12 +214,14 @@ function showpopupall(i) {
     modal.style.display = "block";
 }
 
+//When the user clicks on <span> (x), close the modal
 function closepopup() {
     // console.log("in close");
     let modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
 
+//When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     //console.log("in outside event");
     let modal = document.getElementById("myModal");
