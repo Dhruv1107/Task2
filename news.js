@@ -26,50 +26,50 @@ var data = [
         image: "<div class='content__img'></div>",
         heading: "Republic",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "ISRO Calls Off Chandrayaan-2 Launch Due To Technical Snag",
+        popup: "ISRO on July 15, announced that the launch of Chandrayaan 2 has been postponed for the day as a measure of abundant precaution. ISRO said that there was a technical snag observed in launch vehicle system at T-56 and 24 seconds, after which first the countdown was stopped and then the launching of India's moon mission was delayed. "
     },
     {
         image: "<div class='content__img'></div>",
         heading: "NBC",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "Nine dead after small plane carrying parachutists crashes in Sweden",
+        popup: "HELSINKI — Swedish officials said a small plane carrying parachutists crashed in northern Sweden soon after takeoff on Sunday and all nine people on board were killed. The accident took place a little after 2 p.m. local time on Storsandskar island. Swedish media quoted witnesses reporting that some of the parachutists were seen trying to jump off the plane just before the crash."
     },
     {
         image: "<div class='content__img'></div>",
         heading: "TV9",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "Novak Djokovic Saves Match Points To Claim Fifth Wimbledon Title In Record-breaking Final",
+        popup: "Novak Djokovic saved two match points to clinch a fifth Wimbledon title and 16th major on Sunday, shattering Roger Federer's bid to become the oldest Grand Slam champion in the longest final ever played at the tournament. Despite being outplayed by the 37-year-old Swiss for large parts of the knife-edge encounter, the world number one triumphed 7-6 (7/5), 1-6, 7-6 (7/4), 4-6, 13-12 (7/3). At 4 hours and 57 minutes, it was the longest Wimbledon final ever played and settled by a final set tiebreak for the first time."
     },
     {
         image: "<div class='content__img'></div>",
         heading: "India Today",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "Hrithik Roshan's Super 30 full movie leaked by Tamilrockers, made available for free download",
+        popup: "Hrithik Roshan's Super 30, which is based on the life of mathematician Anand Kumar, has been leaked online by piracy website Tamilrockers. The film was released on July 12 and has been doing a good business at the box office. Severe actions have been taken against the website, which is notorious to leak every latest release, but it continues to affect the business of films by leaking them online. Its latest piracy victims include Kabir Singh, Article 15, Oh Baby and Spider-Man Far From Home"
     },
     {
         image: "<div class='content__img'></div>",
         heading: "Times Now",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "A haunting deflection and un-'fortunate' four runs - How New Zealand were denied glory at Lord's",
+        popup: "A throw from deep caught an edge of Stokes' bat and the ball raced away for a four. It's hard to imagine a batsman scoring runs with the bat while sliding down to save himself from getting run-out. But that's what happened in the epic finale. Stunned by what just happened, New Zealand players saw their worst nightmare come true as England got six runs (two by running and four extra). Despite just three runs needed off the final two balls, the Kiwis were as spirited as ever and thanks to their nerves, England could only manage to get two of the remaining two balls to end the contest in a tie."
     },
     {
         image: "<div class='content__img'></div>",
         heading: "Fox News",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "Djokovic reveals ‘silly’ mental trick to help him deal with crowd at Wimbledon",
+        popup: `Djokovic revealed a mental trick, according to the Times. After winning the match, after nearly five hours, he told reporters that when the crowd chanted “Roger! Roger,” he said he heard “Novak.”“It sounds silly, but it is like that. I try to convince myself that it’s like that.” The sets were 7-6 (5), 1-6, 7-6 (4), 4-6 and 13-12 (3). The final lasted nearly five hours, longer than any other Wimbledon final. Djokovic has now won Wimbledon five times.`
     },
     {
         image: "<div class='content__img'></div>",
         heading: "CNN",
         date: "Posted on 29 June, 2019 //Category: Category One",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nulla porro autem quod, officia, velit magni officiis maxime corrupti quam ex accusamus repellendus deleniti ab! Veniam, harum numquam eum laboriosam nisi libero voluptate, assumenda ipsam tempore ea accusantium eveniet deleniti blanditiis! Saepe praesentium blanditiis pariatur. Iure dolorem reprehenderit earum assumenda.",
-        popup: "Hey Good Morning"
+        content: "'Silverstone, I love you': Lewis Hamilton wins record sixth British Grand Prix",
+        popup: `Lewis Hamilton claimed a thrilling victory at Silverstone on Sunday to win a record-breaking sixth British Grand Prix. It looked as though teammate Valtteri Bottas would spoil the party for the 141,000 visiting fans, but a timely safety car intervention gifted Hamilton first place. Ferrari's Charles Leclerc claimed an impressive third place after an intense, wheel-to-wheel battle with Max Verstappen throughout the race.`
     }
 
 ];
@@ -115,20 +115,23 @@ function myFunction() {
 }
 
 //On Load Function Call
-function myForm() {
+function displayPage() {
     header();
     footer();
-    displayform();
-    displaynews();
+    displayForm();
+    displayNews();
+
     function header() {
         let html = '<h1 class="header__heading">NEWSFEED</h1><p class="header__caption">Yet another newsfeed</p>';
         document.getElementById("header").innerHTML = html;
     }
+
     function footer() {
         let html = ' <p class="footer__copyright">&copy; NewsFeed 2019</p>';
         document.getElementById("footer").innerHTML = html;
     }
-    function displayform() {
+
+    function displayForm() {
         var form = document.createElement("div");
         form.setAttribute("id", "iamform");
         let main = document.getElementById("main");
@@ -153,11 +156,13 @@ function myForm() {
             "</div>";
 
     }
-    function displaynews() {
+
+    function displayNews() {
         var disp_news = document.createElement("div");
         disp_news.setAttribute("id", "displaynews");
         let main = document.getElementById("main");
         main.appendChild(disp_news);
+
         for (let i = 0; i < data.length; i++) {
             fulldata += "<div class='content' id='content'>" +
                 "<div class='content__sub' id='content__display'>" +
@@ -165,26 +170,27 @@ function myForm() {
                 "<h3 class='content__modifier content__head' id='myBtn'>" + data[i].heading + "</h3>" +
                 "<p class='content__modifier content__date'>" + data[i].date + "</p>" +
                 "<p class='content__modifier content__matter'>" + data[i].content + "</p> " +
-                `<div id="myModal" class="modal">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close" onclick="closepopup()">&times;</span>
-                    <h2 id="popup_head"></h2>
-                </div>
-                <div class="modal-body">
-                    <p id="popup_content"></p>
-                </div>
-                <div class="modal-footer">
-                    <h3 id="popup_foot">&copy; NewsFeed 2019</h3>
-                </div>
-                </div>
-                </div>`+
-                "<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopupall(data[" + i + "])'>Continue Reading</a>" +
+                "<a href='#!' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopupall(data[" + i + "])'>Continue Reading</a>" +
                 "</div>" +
                 "<hr>";
         }
 
-        fulldata += "</div>";
+        //Appending model data to fulldata
+        fulldata += `<div id="myModal" class="modal">
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" onclick="closepopup()">&times;</span>
+            <h2 id="popup_head"></h2>
+        </div>
+        <div class="modal-body">
+            <p id="popup_content"></p>
+        </div>
+        <div class="modal-footer">
+            <h3 id="popup_foot">&copy; NewsFeed 2019</h3>
+        </div>
+        </div>
+        </div></div>`;
+
         document.getElementById("displaynews").innerHTML = fulldata;
     }
 }

@@ -53,7 +53,7 @@ body {
 .content {
   width: 70vw;
   display: inline-block;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
 .content__sub {
@@ -251,7 +251,7 @@ label {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #2d3b52;
   color: white;
 }
 
@@ -261,6 +261,6 @@ label {
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #2d3b52;
   color: white;
 }
