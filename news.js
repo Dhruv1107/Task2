@@ -107,30 +107,28 @@ function myFunction() {
 				indexDisplay = index;
 			return selectedCategory === e.heading;
 		});
-		displaySingleNews(singleData, indexDisplay);
+		display = `<div class='content' id='content'>
+					<div class='content__sub' id='content__display'>
+					${singleData[0].image}
+					<h3 class='content__modifier content__head'>
+					${singleData[0].heading}
+					</h3> 
+					<p class='content__modifier content__date'>
+					${singleData[0].date}
+					</p> 
+					<p class='content__modifier content__matter'>
+					${singleData[0].content}
+					</p>
+					<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(${indexDisplay})'>Continue Reading</a>
+					</div></div>`;
+		document.getElementById('displaynews').innerHTML = display;
 	}
 	else if (selectedCategory === 'All') {
 		document.getElementById('displaynews').innerHTML = fullData;
 	}
 
 }
-function displaySingleNews(singleData, indexDisplay) {
-	let display = `<div class='content' id='content'>
-	<div class='content__sub' id='content__display'>
-	${singleData[0].image}
-	<h3 class='content__modifier content__head'>
-	${singleData[0].heading}
-	</h3> 
-	<p class='content__modifier content__date'>
-	${singleData[0].date}
-	</p> 
-	<p class='content__modifier content__matter'>
-	${singleData[0].content}
-	</p>
-	<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(${indexDisplay})'>Continue Reading</a>
-	</div></div>`;
-	document.getElementById('displaynews').innerHTML = display;
-}
+
 
 //On Load Function Call
 function displayPage() {
@@ -181,22 +179,22 @@ function displayNews() {
 	let main = document.getElementById('main');
 	main.appendChild(displayNews);
 
-	for (let i = 0; i < data.length; i++) {
+	for (let index = 0; index < data.length; index++) {
 		fullData +=
 			`<div class='content' id='content'>
 			<div class='content__sub' id='content__display'>
-			${data[i].image}
+			${data[index].image}
 			<h3 class='content__modifier content__head' id='myBtn'>
-			${data[i].heading}
+			${data[index].heading}
 			</h3>
 			<p class='content__modifier content__date'>
-			${data[i].date}
+			${data[index].date}
 			</p>
 			<p class='content__modifier content__matter'>
-			${data[i].content}
+			${data[index].content}
 			</p>
 			<a href='#!' class='content__modifier btn btn--pink' id='myBtn' 
-			onclick='showpopup(${i})'>Continue Reading</a>
+			onclick='showpopup(${index})'>Continue Reading</a>
 			</div>
 			<hr>`;
 	}
