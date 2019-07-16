@@ -77,7 +77,7 @@ var data = [
 	}
 ];
 //Channels present in the dropdown list
-var channels = [ 'BBC', 'Aaj Tak', 'NBC', 'NDTV', 'Republic', 'TV9', 'India Today', 'Times Now', 'Fox News', 'CNN' ];
+var channels = ['BBC', 'Aaj Tak', 'NBC', 'NDTV', 'Republic', 'TV9', 'India Today', 'Times Now', 'Fox News', 'CNN'];
 //variable used to store the complete data of all news channels
 var fulldata = ' ';
 //variable used to store the popup content
@@ -99,9 +99,10 @@ var modal_data = `<div id="myModal" class="modal">
 //Function to display the selected news category
 function myFunction() {
 	var x = document.getElementById('sel-category').value;
+	let display;
 	for (let i = 0; i < data.length; i++) {
 		if (x === data[i].heading) {
-			let display =
+			display =
 				`<div class='content' id='content'>
 				<div class='content__sub' id='content__display'>` +
 				data[i].image +
@@ -117,13 +118,15 @@ function myFunction() {
 				<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(` +
 				i +
 				`)'>Continue Reading</a>
-				</div>` +
-				modal_data +
-				`</div>`;
-			document.getElementById('displaynews').innerHTML = display;
+				</div>` ;
 		} else if (x === 'All') {
 			document.getElementById('displaynews').innerHTML = fulldata;
+			return;
 		}
+		display +=
+			modal_data +
+			`</div>`;
+		document.getElementById('displaynews').innerHTML = display;
 	}
 }
 
@@ -236,7 +239,7 @@ function closepopup() {
 }
 
 //When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
 	let modal = document.getElementById('myModal');
 	if (event.target == modal) {
 		modal.style.display = 'none';
