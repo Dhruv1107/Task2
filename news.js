@@ -1,5 +1,5 @@
 //data in JSON Format
-var data = [
+let data = [
 	{
 		image: "<div class='content__img'></div>",
 		heading: 'BBC',
@@ -77,11 +77,11 @@ var data = [
 	}
 ];
 //Channels present in the dropdown list
-var channels = ['BBC', 'Aaj Tak', 'NBC', 'NDTV', 'Republic', 'TV9', 'India Today', 'Times Now', 'Fox News', 'CNN'];
+let channels = ['BBC', 'Aaj Tak', 'NBC', 'NDTV', 'Republic', 'TV9', 'India Today', 'Times Now', 'Fox News', 'CNN'];
 //variable used to store the complete data of all news channels
-var fulldata = ' ';
+let fullData = ' ';
 //variable used to store the popup content
-var modal_data = `<div id="myModal" class="modal">
+let modalData = `<div id="myModal" class="modal">
 					<div class="modal-content">
 						<div class="modal-header">
 							<span class="close" onclick="closepopup()">&times;</span>
@@ -98,10 +98,10 @@ var modal_data = `<div id="myModal" class="modal">
 
 //Function to display the selected news category
 function myFunction() {
-	var x = document.getElementById('sel-category').value;
+	let selectedCategory = document.getElementById('sel-category').value;
 	let display;
 	for (let i = 0; i < data.length; i++) {
-		if (x === data[i].heading) {
+		if (selectedCategory === data[i].heading) {
 			display =
 				`<div class='content' id='content'>
 				<div class='content__sub' id='content__display'>` +
@@ -119,12 +119,12 @@ function myFunction() {
 				i +
 				`)'>Continue Reading</a>
 				</div>` ;
-		} else if (x === 'All') {
-			document.getElementById('displaynews').innerHTML = fulldata;
+		} else if (selectedCategory === 'All') {
+			document.getElementById('displaynews').innerHTML = fullData;
 			return;
 		}
 		display +=
-			modal_data +
+			modalData +
 			`</div>`;
 		document.getElementById('displaynews').innerHTML = display;
 	}
@@ -149,14 +149,14 @@ function footer() {
 }
 
 function displayForm() {
-	var form = document.createElement('div');
+	let form = document.createElement('div');
 	form.setAttribute('id', 'iamform');
 	let main = document.getElementById('main');
 	main.appendChild(form);
 
-	var allChannels = '';
+	let allChannels = '';
 	for (let i = 0; i < channels.length; i++) {
-		allChannels += `<option value='` + channels[i] + `'>` + channels[i] + `</option>`;
+		allChannels += `<option value='${channels[i]}'>${channels[i]}</option>`;
 	}
 
 	document.getElementById('iamform').innerHTML =
@@ -164,9 +164,9 @@ function displayForm() {
 		<label for='sel-category' class='form__select-label'><b>SELECT CATEGORY</b></label>
 		<select id='sel-category' class='form__select-box' onchange='myFunction()'>
 		// If the select is changed myFunction() is called
-		<option value='All' selected>All</option>` +
-		allChannels +
-		`</select>
+		<option value='All' selected>All</option>
+		${allChannels} 
+		</select>
 		<label for='subscribe' class='form__subscribe-label'><b>SUBSCRIBE</b></label>
 		<input type='text' id='subscribe' class='form__subscribe-textbox' placeholder='Email Address'/>
 		<button class='form__subscribe-button' onclick='validate()'>Subscribe</button>
@@ -174,40 +174,38 @@ function displayForm() {
 }
 
 function displayNews() {
-	var disp_news = document.createElement('div');
+	let disp_news = document.createElement('div');
 	disp_news.setAttribute('id', 'displaynews');
 	let main = document.getElementById('main');
 	main.appendChild(disp_news);
 
 	for (let i = 0; i < data.length; i++) {
-		fulldata +=
+		fullData +=
 			`<div class='content' id='content'>
-			<div class='content__sub' id='content__display'>` +
-			data[i].image +
-			`<h3 class='content__modifier content__head' id='myBtn'>` +
-			data[i].heading +
-			`</h3>
-			<p class='content__modifier content__date'>` +
-			data[i].date +
-			`</p>
-			<p class='content__modifier content__matter'>` +
-			data[i].content +
-			`</p>
+			<div class='content__sub' id='content__display'>
+			${data[i].image}
+			<h3 class='content__modifier content__head' id='myBtn'>
+			${data[i].heading}
+			</h3>
+			<p class='content__modifier content__date'>
+			${data[i].date}
+			</p>
+			<p class='content__modifier content__matter'>
+			${data[i].content}
+			</p>
 			<a href='#!' class='content__modifier btn btn--pink' id='myBtn' 
-			onclick='showpopup(` +
-			i +
-			`)'>Continue Reading</a>
+			onclick='showpopup(${i})'>Continue Reading</a>
 			</div>
 			<hr>`;
 	}
 
-	//Appending model data to fulldata
-	fulldata += modal_data;
-	document.getElementById('displaynews').innerHTML = fulldata;
+	//Appending model data to fullData
+	fullData += modalData;
+	document.getElementById('displaynews').innerHTML = fullData;
 }
 
 //For Validation of Email Address
-var email = [];
+let email = [];
 function validate() {
 	if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(document.getElementById('subscribe').value)) {
 		let loc = localStorage.getItem('iamkey');
