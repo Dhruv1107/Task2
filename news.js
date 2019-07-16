@@ -100,28 +100,36 @@ let modalData = `<div id="myModal" class="modal">
 function myFunction() {
 	let selectedCategory = document.getElementById('sel-category').value;
 	let display;
-	for (let i = 0; i < data.length; i++) {
-		if (selectedCategory === data[i].heading) {
-			display =
-				`<div class='content' id='content'>
-				<div class='content__sub' id='content__display'>
-				${data[i].image}
-				<h3 class='content__modifier content__head'>
-				${data[i].heading}
-				</h3> 
-				<p class='content__modifier content__date'>
-				${data[i].date}
-				</p> 
-				<p class='content__modifier content__matter'>
-				${data[i].content}
-				</p>
-				<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(${i})'>Continue Reading</a>
-				</div></div>`;
-			document.getElementById('displaynews').innerHTML = display;
-		} else if (selectedCategory === 'All') {
-			document.getElementById('displaynews').innerHTML = fullData;
-		}
+	let indexDisplay;
+	if (selectedCategory !== 'All') {
+		let singleData = data.filter(function (e, index) {
+			if (selectedCategory === e.heading)
+				indexDisplay = index;
+			return selectedCategory === e.heading;
+		});
+		displaySingleNews(singleData, indexDisplay);
 	}
+	else if (selectedCategory === 'All') {
+		document.getElementById('displaynews').innerHTML = fullData;
+	}
+
+}
+function displaySingleNews(singleData, indexDisplay) {
+	let display = `<div class='content' id='content'>
+	<div class='content__sub' id='content__display'>
+	${singleData[0].image}
+	<h3 class='content__modifier content__head'>
+	${singleData[0].heading}
+	</h3> 
+	<p class='content__modifier content__date'>
+	${singleData[0].date}
+	</p> 
+	<p class='content__modifier content__matter'>
+	${singleData[0].content}
+	</p>
+	<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(${indexDisplay})'>Continue Reading</a>
+	</div></div>`;
+	document.getElementById('displaynews').innerHTML = display;
 }
 
 //On Load Function Call
