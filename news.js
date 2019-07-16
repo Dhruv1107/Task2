@@ -104,29 +104,23 @@ function myFunction() {
 		if (selectedCategory === data[i].heading) {
 			display =
 				`<div class='content' id='content'>
-				<div class='content__sub' id='content__display'>` +
-				data[i].image +
-				`<h3 class='content__modifier content__head'>` +
-				data[i].heading +
-				`</h3> 
-				<p class='content__modifier content__date'>` +
-				data[i].date +
-				`</p> 
-				<p class='content__modifier content__matter'>` +
-				data[i].content +
-				`</p>
-				<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(` +
-				i +
-				`)'>Continue Reading</a>
-				</div>` ;
+				<div class='content__sub' id='content__display'>
+				${data[i].image}
+				<h3 class='content__modifier content__head'>
+				${data[i].heading}
+				</h3> 
+				<p class='content__modifier content__date'>
+				${data[i].date}
+				</p> 
+				<p class='content__modifier content__matter'>
+				${data[i].content}
+				</p>
+				<a href='#' class='content__modifier btn btn--pink' id='myBtn' onclick='showpopup(${i})'>Continue Reading</a>
+				</div></div>`;
+			document.getElementById('displaynews').innerHTML = display;
 		} else if (selectedCategory === 'All') {
 			document.getElementById('displaynews').innerHTML = fullData;
-			return;
 		}
-		display +=
-			modalData +
-			`</div>`;
-		document.getElementById('displaynews').innerHTML = display;
 	}
 }
 
@@ -149,10 +143,10 @@ function footer() {
 }
 
 function displayForm() {
-	let form = document.createElement('div');
-	form.setAttribute('id', 'iamform');
-	let main = document.getElementById('main');
-	main.appendChild(form);
+	let formDivision = document.createElement('div');
+	formDivision.setAttribute('id', 'iamform');
+	let mainDivision = document.getElementById('main');
+	mainDivision.appendChild(formDivision);
 
 	let allChannels = '';
 	for (let i = 0; i < channels.length; i++) {
@@ -174,10 +168,10 @@ function displayForm() {
 }
 
 function displayNews() {
-	let disp_news = document.createElement('div');
-	disp_news.setAttribute('id', 'displaynews');
+	let displayNews = document.createElement('div');
+	displayNews.setAttribute('id', 'displaynews');
 	let main = document.getElementById('main');
-	main.appendChild(disp_news);
+	main.appendChild(displayNews);
 
 	for (let i = 0; i < data.length; i++) {
 		fullData +=
@@ -198,9 +192,6 @@ function displayNews() {
 			</div>
 			<hr>`;
 	}
-
-	//Appending model data to fullData
-	fullData += modalData;
 	document.getElementById('displaynews').innerHTML = fullData;
 }
 
@@ -224,6 +215,12 @@ function validate() {
 
 //When the user clicks the button, open the modal (for one news channel)
 function showpopup(i) {
+	let modelDivision = document.createElement('div');
+	modelDivision.setAttribute('id', 'iammodal');
+	let contentDivision = document.getElementById('content');
+	contentDivision.appendChild(modelDivision);
+	document.getElementById('iammodal').innerHTML = modalData;
+
 	document.getElementById('popup_head').innerHTML = data[i].heading;
 	document.getElementById('popup_content').innerHTML = data[i].popup;
 	let modal = document.getElementById('myModal');
